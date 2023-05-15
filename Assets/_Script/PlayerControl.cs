@@ -26,9 +26,8 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Collider2D target = Physics2D.OverlapCircle(mousePos, 0.1f);
-            if (target != null)
+            if (target != null && target.TryGetComponent(out dragTarget))
             {
-                dragTarget = target.GetComponent<Item>();
                 dragTarget.Draging(true);
             }
         }

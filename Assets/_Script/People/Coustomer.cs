@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coustomer : People
+public class Coustomer : MonoBehaviour
 {
     public string[] order;
 
@@ -10,7 +10,10 @@ public class Coustomer : People
 
     void Start()
     {
-        
+        GetComponent<People>().onDeathEvent += () =>
+        {
+            GameManager.instance.playerHealth -= 1;
+        };
     }
 
     // Update is called once per frame
@@ -24,6 +27,8 @@ public class Coustomer : People
         if(collision.gameObject.TryGetComponent<Pizza>(out Pizza pizza))
         {
             bool rightPizza = CheckPizzer(pizza);
+
+            Destroy(pizza.gameObject);
         }
     }
 
@@ -34,7 +39,7 @@ public class Coustomer : People
         for (int i = 0; i < pizza.ingredients.Count; i++)
         {
             string ingredient = pizza.ingredients[i].name;
-            Debug.Log(ingredient);
+
             if (checkOrder.Contains(ingredient))
             {
                 checkOrder.Remove(ingredient);

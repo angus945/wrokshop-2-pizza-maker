@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public Action<bool> onItemDrag;
     public string name;
     private void OnEnable()
     {
@@ -13,5 +14,7 @@ public class Item : MonoBehaviour
     public void Draging(bool draging)
     {
         GetComponent<BoxCollider2D>().enabled = !draging;
+
+        onItemDrag?.Invoke(draging);
     }
 }
