@@ -14,6 +14,7 @@ public class Coustomer : MonoBehaviour
         {
             GameManager.instance.playerHealth -= 1;
         };
+        StartCoroutine(GetComponent<People>().RandomMove());
     }
 
     // Update is called once per frame
@@ -29,6 +30,9 @@ public class Coustomer : MonoBehaviour
             bool rightPizza = CheckPizzer(pizza);
 
             Destroy(pizza.gameObject);
+
+            StopAllCoroutines();
+            StartCoroutine(GetComponent<People>().Exit());
         }
     }
 

@@ -13,6 +13,7 @@ public class Item : MonoBehaviour
     }
     public void Draging(bool draging)
     {
+        transform.parent = null;
         GetComponent<BoxCollider2D>().enabled = !draging;
 
         onItemDrag?.Invoke(draging);

@@ -16,9 +16,12 @@ public class People : MonoBehaviour
     }
 
     Vector3 target;
+
+    public PeopleSpawn SpownBy { get; internal set; }
+
     public void SetTarget(bool exit)
     {
-        target = exit ? PeopleSpawn.GetExitPoint() :PeopleSpawn.GetMoveTarget();
+        target = exit ? SpownBy.GetExitPoint() : SpownBy.GetMoveTarget();
     }
     public bool MoveToTarget()
     {
@@ -44,6 +47,17 @@ public class People : MonoBehaviour
             yield return null;
         }
 
+        SetTarget(true);
+
+        while (MoveToTarget())
+        {
+            yield return null;
+        }
+
+        Destroy(gameObject);
+    }
+    public IEnumerator Exit()
+    {
         SetTarget(true);
 
         while (MoveToTarget())

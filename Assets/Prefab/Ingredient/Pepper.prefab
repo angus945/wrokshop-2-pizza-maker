@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351333480919388142}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9372747, w: 0.34859183}
+  m_LocalRotation: {x: -0, y: -0, z: -0.8493152, w: 0.52788603}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.23986, y: 0.23986, z: 0.23986}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5341258017882728777}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -139.198}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -116.275}
 --- !u!212 &1734335019146653137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1644386534, guid: 15448b8bc51ff1a4b9a993f61005fd99, type: 3}
+  m_Sprite: {fileID: -926965712, guid: 80e99f504c857cf4aa7609938c2ac29e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 5341258017882728783}
   - component: {fileID: 5341258017882728780}
   m_Layer: 0
-  m_Name: Meat
+  m_Name: Pepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 5341258017882728778}
   m_LocalRotation: {x: 0, y: 0, z: 0.9390943, w: 0.34365973}
   m_LocalPosition: {x: -4.15, y: -2.8, z: 0}
-  m_LocalScale: {x: 0.50094944, y: 0.50094944, z: 0.50094944}
+  m_LocalScale: {x: 0.42548, y: 0.42548, z: 0.42548}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8657918163092749164}
@@ -144,7 +144,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6011637, y: 1.5940766}
+  m_Size: {x: 0.9163879, y: 1.1399246}
   m_EdgeRadius: 0
 --- !u!50 &5341258017882728781
 Rigidbody2D:
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2062e81f019474e1c81ceabc84b51996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: meat
+  name: pepper
 --- !u!114 &5341258017882728780
 MonoBehaviour:
   m_ObjectHideFlags: 0

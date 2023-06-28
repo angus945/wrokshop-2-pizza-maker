@@ -5,12 +5,25 @@ using UnityEngine;
 public class Pizza : MonoBehaviour
 {
     public List<Ingredient> ingredients;
-    public float bakeTime;
+    float _bakeTime;
+    public float bakeTime
+    {
+        get => _bakeTime;
+        set
+        {
+            for (int i = 0; i < ingredients.Count; i++)
+            {
+                Ingredient ingredient = ingredients[i];
+                ingredient.transform.Rotate(Vector3.forward * 3 * Time.deltaTime);
+            }
+            _bakeTime = value;
+        }
+    }
 
     public void AddIngredient(Ingredient ingredient)
     {
         ingredients.Add(ingredient);
-        ingredient.GetComponent<SpriteRenderer>().sortingOrder = ingredients.Count + 1;
+        ingredient.GetComponentInChildren<SpriteRenderer>().sortingOrder = ingredients.Count + 1;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
